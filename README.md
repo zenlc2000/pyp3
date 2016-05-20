@@ -2,7 +2,7 @@
 
 **Note:** This page is the first section from https://code.google.com/archive/p/pyp/
 
-ls | pyp "p.replace('maybe','yes') | pp.sort() | pp[1:3] |p , p , p.strip('abc') | whitespace | p[3], 'no' | p.upper() "
+     ls | pyp "p.replace('maybe','yes') | pp.sort() | pp[1:3] |p , p , p.strip('abc') | whitespace | p[3], 'no' | p.upper() "
 
 ##Piping Python Through Pipes
 

@@ -121,8 +121,8 @@ class HistoryObject(object):
     def __getattr__(self, name):
          return getattr(self.__wrapped, name)
 
-    def __cmp__(self, other):
-         return cmp(self.__wrapped, other)
+    def __lt__(self, other):
+        return self.__wrapped < other.__wrapped
 
     def __str__(self):
          return str(self.__wrapped)

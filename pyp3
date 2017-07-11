@@ -2596,7 +2596,7 @@ if __name__ == '__main__':
     parser.add_option("-c", "--turn_off_color", action='store_true', help="prints raw, uncolored output")
     parser.add_option("-u", "--unmodified_config", action='store_true', help="prints out generic PypCustom.py config file")
     parser.add_option("-b", "--blank_inputs", action='store', type='string', help="generate this number of blank input lines; useful for generating numbered lists with variable 'n'")
-    parser.add_option("-n", "--no_input", action='store_true', help="use with command that generates output with no input; same as --dummy_input 1")
+    parser.add_option("-n", "--no_input", action='store_true', help="use with command that generates output with no input; same as --blank_inputs 1")
     parser.add_option("-i", "--ignore_blanks", action='store_true', help="remove blank lines from output")
     parser.add_option("-k", "--keep_false", action='store_true', help="print blank lines for lines that test as False. default is to filter out False lines from the output")
     parser.add_option("-r", "--rerun", action="store_true", help="rerun based on automatically cached data from the last run. use this after executing \"pyp\", pasting input into the shell, and hitting CTRL-D TWICE")

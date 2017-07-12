@@ -460,7 +460,7 @@ class PypStr(str,PypStrCustom):
         if match:
             return PypStr(match.group(group))
         else:
-            return False
+            return ''
 
 
 class PypList(list,PypListCustom):
@@ -1712,12 +1712,12 @@ class Pyp(object):
 
                 cmd = self.history[self.history_index]['output'] #color formated output
                 #if 1: ########################TESTING
-                if cmd != False: #kept commands
+                if cmd: #kept commands
                     if options.execute or options.execute_aux: #executes command
                         execute_cmds.append(cmd)
                     else:
                         print(cmd) # normal output
-                elif options.keep_false: #prints blank lines for lost False commands
+                elif options.keep_false: #prints blank lines for options outputs that evaluate as False ({}, [], False, (), '', etc)
                     print()
 
 

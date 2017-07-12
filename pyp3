@@ -460,7 +460,7 @@ class PypStr(str,PypStrCustom):
         if match:
             return PypStr(match.group(group))
         else:
-            return ''
+            return False
 
 
 class PypList(list,PypListCustom):

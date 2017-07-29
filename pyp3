@@ -462,6 +462,18 @@ class PypStr(str,PypStrCustom):
         else:
             return ''
 
+    def rereplace(self, to_match, to_replace):
+        '''
+        returns this string, with all occurrences of the regex to_match replaced with to_replace
+        @return: this string, with regex-substitutions made
+        @rtype: PypStr
+        @param to_match: regex used for matching
+        @type to_match: str
+        @param to_replace: string to replace with - see re.sub for full syntax
+        @type to_replace: str
+        '''
+        return PypStr(re.sub(to_match, to_replace, self))
+
 
 class PypList(list,PypListCustom):
     '''
@@ -2353,7 +2365,9 @@ class Docs():
         p.clean(delimeter)   removes all metacharacters except for slashes, dots and
                              the joining delimeter (default is "_")
         p.re(REGEX)          returns portion of string that matches REGEX regular
-                             expression. works great with p.replace(p.re(REGEX),STR)
+                             expression.
+        p.rereplace(REG,STR) find REG regular expression and replace with STR.
+                             this is more reliable than p.replace(p.re(REGEX),STR)
 
         p.dir                directory of path
         p.file               file name of path

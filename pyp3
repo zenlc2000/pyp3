@@ -1363,7 +1363,8 @@ class Pyp(object):
         @type iterables: list<str>
         '''
         out = []
-        if '__iter__' in dir(iterables) or type(iterables) in [list, PowerPipeList,tuple,PypList]:
+        safe_iterables = [list, PowerPipeList,tuple,PypList]
+        if type(iterables) in safe_iterables:
             #expand history objects
             if [x for x in iterables if type(x) in [HistoryObject]]:
 
@@ -1375,7 +1376,7 @@ class Pyp(object):
                     iterables = expanded_iterables
             #if [x for x in iterables if type(x) in [str, PypStr,HistoryObject,type,int,float]]:
 
-            if [x for x in iterables if type(x) not in [list,PowerPipeList,tuple,PypList]]: #str,int,etc
+            if [x for x in iterables if type(x) not in safe_iterables]: #str,int,etc
                 out = out + iterables #add the lists and be done
 
             else:
